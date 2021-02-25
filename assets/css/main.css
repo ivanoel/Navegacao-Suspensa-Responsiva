@@ -1,0 +1,272 @@
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Akaya Telivigala', cursive;
+    scroll-behavior: smooth;
+}
+
+/* Menu | Barra de Navegação */
+
+.navegar {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    height: 50px;
+    width: 250px;
+    height: 50px;
+    transition: 0.5s;
+    z-index: 100000;
+    overflow: hidden;
+}
+
+.navegar.ativo {
+    height: 350px;
+}
+
+.navegar .alternar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #476e8f;
+    color: rgb(12, 12, 12);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.navegar .alternar::before {
+    content: 'Menu';
+    margin-right: 15px;
+}
+.navegar .alternar.ativo::before {
+    content: 'Close';
+    margin-right: 15px;
+}
+
+.navegar .alternar span {
+    position: relative;
+    width: 20px;
+    height: 50px;
+}
+
+.navegar .alternar span::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.navegar .alternar span::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+/* Mudando posição para entrar e sair. */
+.navegar .alternar.ativo span::before {
+    transform: rotate(225deg);
+    top: 24px;
+}
+
+.navegar .alternar.ativo span::after {
+    transform: rotate(135deg);
+    top: 24px;
+}
+
+/* Links */
+
+.navegar ul {
+    position: relative;
+    background: #011;
+}
+
+.navegar ul li {
+    list-style: none;
+}
+
+.navegar ul li a {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    padding:  10px 20px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: 1s;
+}
+
+.navegar ul li a:hover {
+    transition: 0s;
+    background: #476e8f;
+}
+
+/* Section */
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e3f2fd;
+}
+
+section h2 {
+    font-size: 12vw;
+    color: rgba(33, 150, 243, 0.2);
+}
+
+/* List */
+
+ul {
+    list-style: disc;
+    margin: 0 0 2em 0;
+    padding-left: 1em;
+}
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+}
+
+ul.icons li:last-child {
+    padding-right: 0;
+}
+
+    @media screen and (max-width: 480px) {
+
+        ul.actions li {
+            padding: 1em 0 0 0;
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        ul.actions li:first-child {
+            padding-top: 0;
+        }
+
+        ul.actions li > * {
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        ul.actions li > *.icon:before {
+            margin-left: -2em;
+        }
+
+        ul.actions.small li {
+            padding: 0.5em 0 0 0;
+        }
+
+        ul.actions.small li:first-child {
+            padding-top: 0;
+        }
+
+        }
+
+/* Icon */
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.icon > .label {
+    display: none;
+}
+
+.icon.style2 {
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 100%;
+    display: inline-block;
+    padding: 0.5em;
+    border: solid 1px rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.icon.style2:before {
+    display: block;
+    width: 1.25em;
+    height: 1.25em;
+    line-height: 1.25em;
+    font-size: 1.35em;
+}
+
+.icon.style2:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+@media screen and (max-width: 736px) {
+
+    .icon.style2:before {
+        font-size: 1em;
+    }
+
+}
+
+/* Footer */
+#footer {
+    background: #476e8f;
+    text-align: center;
+    padding: 4em 0 4em 0;
+}
+
+#footer:before {
+    content: '';
+    border-top: solid 1px rgba(255, 255, 255, 0.25);
+    width: 10em;
+    display: block;
+    margin: 0 auto 3em auto;
+
+}
+#footer p {
+    font-size: 24px;
+    color: #fff;
+}
+    @media screen and (max-width: 1280px) {
+
+        #footer {
+            padding: 2em 0 2em 0;
+        }
+    }
